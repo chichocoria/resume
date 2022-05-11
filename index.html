@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Resume</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="45489ae9-6453-47ae-876f-3b228300abf9" class="page mono"><header><img class="page-cover-image" src="images/d8395pm-4655ee90-ab4e-43f4-94c1-78f9b10a888d.png" style="object-position:center 74.59%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="images/1517448745527.jfif"/></div><h1 class="page-title">Resume</h1></header><div class="page-body"><p id="9b742ebb-edcd-49fb-8e08-ec0b6f6da5fb" class=""><div class="indented"><blockquote id="7a265e9a-c5db-4365-9c4c-3aad17a31ca0" class="">I&#x27;m a network and telecommunications technician in Mendoza with 10 years of experience in the software industry. </blockquote><hr id="9d8b0a3c-a193-429f-bfdc-fad1339dba10"/><p id="5030df79-30d8-448d-b640-c6e1c220e45a" class="">☎️ Contact information</p><p id="d6878e7b-8820-4cf7-af1d-d5b62fe3035a" class="">📧 rubencoria7@gmail.com</p><p id="7a27c56a-21cf-4e1d-b2b5-15e136292753" class="">🐦 Twitter: @chichocoria</p><p id="dedb5963-0e26-47c1-a395-24b741662e5c" class="">🔗 <a href="https://www.linkedin.com/in/dariocoria/">https://www.linkedin.com/in/dariocoria/</a></p><p id="c77618d9-b3df-4b47-b21c-658d87997c42" class="">😼 <a href="https://github.com/chichocoria">https://github.com/chichocoria</a></p><hr id="6027c256-16ec-4990-a1c3-c2a53846af18"/><p id="4d3eb84e-f751-4916-9795-5a9f939d080c" class=""><div class="indented"><h1 id="c1e3b4a2-5ef0-4f98-a88f-a03a1fa66ead" class=""><strong>👩🏻‍💻</strong> Work experience</h1><p id="ff59ecff-1aa0-46ab-b5ab-8158f960fe73" class="">
+</p><h2 id="1cb8d2f5-ae31-4970-870d-9e5d0692ad2d" class="">Sysadmin</h2><p id="3b30e98f-2b38-499f-8512-525192c0847c" class="block-color-gray"><em><strong>ITC Soluciones</strong></em><em>, Mendoza - Godoy Cruz – (2022-Present)</em></p><p id="27f0c858-d07c-4d63-b4b7-99cea09da4bb" class="">System Administrator and Security. IT support. Backups (Proxmox - VEEAM). Monitoring (Zabbix - Uptime Kuma). Hypervisors (Proxmox and VMware ESXI).</p><p id="f00d077d-2c1a-46d9-994c-2521acc51535" class="">Docker -Docker-compose. Shell and Python Scripting. Fortinet and Mikrotik. Documentation(Netbox - Confluence - Bookstack)</p><p id="3167163e-e787-4d62-8d07-b738e31ff905" class="">SQL data manipulation in Postgres, MySQL and SQL Server. Linux and Windows server monitoring. Linux Server Administration.</p><p id="d3d19728-b85a-4303-8cd9-88dcbb986dcb" class="">
+</p><h2 id="81c4d8f5-d56e-40e6-a6ed-d48e651c42ae" class="">System Analyst</h2><p id="c42ff47c-01b8-446a-96e8-4994353be1ca" class="block-color-gray"><em><strong>ITC Soluciones</strong></em><em>, Mendoza - Godoy Cruz – (2020-2021)</em></p><p id="ca47b2ff-c01c-4ecb-83d0-06fdb5e798b4" class="">SQL data manipulation in Postgres, MySQL and SQL Server. Linux and Windows server monitoring. Linux Server Administration. IT support to providers and pharmacies throughout the country. Shell Scripting. Python Scripting.</p><h2 id="c7965e42-e8be-49be-a55b-83bc9f143fca" class="">Helpdesk Support</h2><p id="5286a54c-0bef-40e0-9d1e-710c739aa2e2" class="block-color-gray"><em><strong>ITC Soluciones</strong></em><em>, Mendoza - Godoy Cruz – (2009-2020)</em></p><p id="e3d0c3c2-3c5a-4a2b-af65-8c8c9212c076" class="">SQL data manipulation in Postgres, MySQL and SQL Server. Linux and Windows server monitoring. Linux Server Administration. IT support to providers and pharmacies throughout the country.</p><p id="334d2976-91b2-4fd0-8c26-dffecd69245f" class="">
+</p><h2 id="39513130-838b-4421-96f8-d55b8a0f86c6" class="">Network Administrator</h2><p id="3e96ca13-90cf-4dfa-8b5a-c01b4c477aef" class="block-color-gray"><em>2002-2007</em></p><p id="6a3daf08-90d5-462d-a3f5-6bf5d1f78a13" class="">Internet Cafe Network Administrator 6 years in charge of Armed,
+Repair, Maintenance, Installation. PC cabling. Installation and configuration
+by Proxy Cache Squid.<div class="indented"><p id="f63b58ff-495a-45f9-867d-a7a1bb37129b" class="">
+</p></div></p></div></p><hr id="84cc7f4e-fbf7-435a-aaf2-f66ac603d741"/><p id="c92dc980-093c-4a30-bc5a-5ca23057bf67" class=""><div class="indented"><h1 id="5da897da-ac8e-4b0a-aa72-eeb86551077c" class="">🛠 Skills</h1><h2 id="0c63e562-2d26-491a-9f20-2ca89b454f3b" class="">💻 Technology</h2><h3 id="33e901fa-36c3-4742-94da-cce225a3c5c2" class="">SQL⭐️⭐️⭐️</h3><p id="4fb59218-e1f0-4889-b7a4-b30d302d09c1" class="">SQL Server - Postgres - Mysql</p><p id="afd5530b-9cd4-4da5-b21b-f0034f1b04b4" class="">Data Manipulation for consult information, insert new data, keep it up to date, and delete it when no longer needed.</p><p id="146059bc-abe3-42f4-8e54-32c6ed8c4ea5" class="">
+</p><h3 id="09495406-e38f-4934-81b3-050a8303c3d2" class="">Linux⭐️⭐️⭐️</h3><p id="5dd3d760-0b58-4ddb-bab1-c0cc14ee72c7" class="">Linux System Administrator</p><p id="da7e0f66-6d06-4ff3-860a-036ef2d2829e" class="">
+</p><h3 id="ba0830b4-7d29-45a4-a932-b5f6fe9a463d" class="">Zabbix⭐️⭐️</h3><p id="a2e74d43-26f2-44ff-8704-3fb0a38452e1" class="">Zabbix management</p><p id="9db69e8b-192b-4340-a2e9-5f62ab4999f8" class="">
+</p><h3 id="d3242df2-db11-40d5-97ed-edc02576f789" class="">Docker⭐️⭐️</h3><p id="bfa8fa84-5166-4132-9e3f-65e2b06d8d20" class="">Docker and Docker-compose</p><p id="e34bbd12-3de9-41c7-a15e-f118af9a0d59" class="">
+</p><h3 id="816252d7-7921-4c4a-8108-9fb20fdd74f9" class="">Hipervisors⭐️⭐️</h3><p id="f26e8ad5-b03c-4189-aca9-292ade1c165f" class="">Proxmox - VMware ESXI</p><p id="c3ef3e65-d97b-4bc6-8cd0-cab82c023de5" class="">
+</p><h3 id="256b51c4-0219-41c0-b60b-8c4ce932223f" class="">Scripting⭐️⭐️</h3><p id="0ac031c7-0fcb-41a9-81ea-f22ed3594368" class="">Shell - Phyton</p></div></p><p id="9217e0c9-04ce-4104-bd35-621aeb2d51cc" class="">
+</p><hr id="fc7e70b6-45eb-4332-9674-41157381ec5f"/><p id="3cd12865-3add-41e4-bbfd-00b9225f0c3a" class=""><div class="indented"><h2 id="53f4ddcc-3d81-4002-ac4e-3fa60d740796" class="">🗣 Languages</h2><h3 id="8bb8a065-6e2e-4905-9c92-73f2ead5a00d" class="">Spanish 🇦🇷</h3><p id="11533561-4bca-4f00-bacd-b1db5ef774bc" class="">Native speaker</p><p id="c067d9c5-9a94-4b9b-8508-e79a633fce3d" class="">
+</p><h3 id="50a7337d-d42e-4936-b959-99cb9427eeea" class="">English 🇬🇧</h3><p id="5665e28e-eda8-48cf-a28f-84fb71b4d67e" class="">Intermediate Level</p></div></p><hr id="8fa847f0-474c-442f-9ece-30321de18057"/><h1 id="157ff5eb-7345-472b-8dc7-a91ed93fa8f3" class="">📚 Education</h1><h2 id="0d00c9c6-4332-4b70-a4e8-ced8d8f15bf1" class=""><strong>University Technician in Data Networks and Telecommunications</strong></h2><p id="c7839c8f-ad12-4537-8979-18caacc08683" class="block-color-gray">2016-<em>2019</em></p><p id="04c48db4-b138-4d47-9606-67105c9e56e2" class="">ITU - Universidad Nacional de Cuyo - Argentina - Mendoza</p><h2 id="212cce69-d875-42fe-a462-4cfd720dc549" class=""><strong>Senior Systems Analyst and Developer</strong></h2><p id="8c818ee7-2425-453d-aa7e-0e1023b7d2bd" class="block-color-gray">2007-<em>2010</em></p><p id="f10d7942-2b31-4b61-a673-53e6160c55fa" class="">Instituto Nuevo Cuyo - Argentina - Mendoza</p><p id="90238c54-37a8-4b6e-a8b5-9c9a1aec2af8" class="">
+</p></div></p></div></article></body></html>
